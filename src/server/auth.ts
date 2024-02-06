@@ -14,12 +14,16 @@ declare module "next-auth" {
     user: {
       id: string;
       // ...other properties
+      isAdmin: boolean;
+      bio: string | null;
     } & DefaultSession["user"];
   }
 
-  // interface User {
-  //   // ...other properties
-  // }
+  interface User {
+    // ...other properties
+    isAdmin: boolean;
+    bio: string | null;
+  }
 }
 
 export const authOptions: NextAuthOptions = {
@@ -30,6 +34,8 @@ export const authOptions: NextAuthOptions = {
         ...session.user,
         id: user.id,
         // ...other properties
+        isAdmin: user.isAdmin,
+        bio: user.bio,
       },
     }),
   },
