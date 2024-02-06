@@ -23,12 +23,9 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className={`${font.className} min-h-screen overflow-x-hidden bg-gradient-to-br from-slate-950 to-cyan-900 text-slate-50 antialiased`}
+        className={`${font.className} min-h-screen overflow-x-hidden bg-gradient-to-br from-cyan-950 to-cyan-800 text-slate-50 antialiased`}
       >
-        <TRPCReactProvider>
-          <h1>Layout da root</h1>
-          {children}
-        </TRPCReactProvider>
+        <TRPCReactProvider>{children}</TRPCReactProvider>
       </body>
     </html>
   );
